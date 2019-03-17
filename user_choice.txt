@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace CSV_read
+{
+    class CsvHelper
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter the choice"  +
+                "1.location"  +  "2.Date_Of_Birth" + "3.designation");
+            int i = Convert.ToInt32(Console.ReadLine());
+            switch (i)
+            {
+                case 1:
+                    Console.WriteLine("enter the location name");
+                    var loc = Console.ReadLine();
+                    Location(List, loc);
+                    break;
+                case 2:
+                    Console.WriteLine("enter the Dob");
+                    //var date = DateTime.Now.ToString("dd/MM/yyyy");
+                    DateTime date_of_birth = Convert.ToDateTime(Console.ReadLine());
+                    DOB(List, date_of_birth);
+                    break;
+                case 3:
+                    Console.WriteLine("enter designation");
+                    var des = Console.ReadLine();
+                    Designation(List, des);
+                    break;
+                default:
+                    Console.WriteLine("Invalid");
+                    break;
+
+            }
+
+            Console.WriteLine("Press any key to exit");
+            Console.ReadLine();
+        }
+
+        private static void DOB<T>(List<T> list, DateTime date_of_birth)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void Location<T>(List<T> list, string loc)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void Designation<T>(List<T> list, string des)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

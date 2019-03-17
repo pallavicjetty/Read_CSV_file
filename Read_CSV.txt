@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSV_Read
+{
+     public class Program
+    {
+        static void Main(string[] args)
+        {
+            var Read_file = File.ReadAllLines(@"D:\Records1.csv");
+
+            var F_List = from CSV_list in Read_file
+                         let data = CSV_list.Split(',')
+                         select new
+                         {
+                             Employee_id = data[0],
+                             Name = data[2] + data[3] + data[4],
+                             DOB = data[10],
+                             designation = data[1],
+                             Location = data[30],
+
+                         };
+
+            foreach (var p in F_List)
+            {
+                Console.WriteLine(p.Employee_id + "|" + p.designation + "|" + p.Name + "|" + p.DOB + "|" + p.Location);
+            }
+            Console.ReadKey();
+        }
+    }
+}
